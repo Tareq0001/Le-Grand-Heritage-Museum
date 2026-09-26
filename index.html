@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Grand Cabinet des Curiosités & Sciences | الأرشيف الملكي للتراث الإنساني</title>
+  
+  <!-- Classical Heritage Stylesheet -->
+  <link rel="stylesheet" href="css/heritage-design-system.css">
+</head>
+<body>
+
+  <div class="grand-palace-layout">
+
+    <!-- 1. Imperial Hall Header -->
+    <header class="imperial-header">
+      <div class="fleur-de-lis-crest">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C11.5 4 10 7 7 8C7 10 8 12 10 12.5C9.5 13.5 9 14.5 9 16C9 17.5 10 18.5 11 19C10.5 19.5 10 20.5 10 21.5H14C14 20.5 13.5 19.5 13 19C14 18.5 15 17.5 15 16C15 14.5 14.5 13.5 14 12.5C16 12 17 10 17 8C14 7 12.5 4 12 2M12 14.5C12.8 14.5 13.5 15.2 13.5 16C13.5 16.8 12.8 17.5 12 17.5C11.2 17.5 10.5 16.8 10.5 16C10.5 15.2 11.2 14.5 12 14.5Z"/>
+        </svg>
+      </div>
+      <div class="imperial-subtitle">المعرض الملكي الدائم للتراث العلمي والإنساني الكلاسيكي</div>
+      <h1 class="imperial-title">Le Grand Cabinet des Curiosités</h1>
+      
+      <div class="filigree-divider">
+        <span class="filigree-line"></span>
+        <span class="filigree-ornament">⚜ ❦ ⚜</span>
+        <span class="filigree-line"></span>
+      </div>
+
+      <p class="imperial-motto">
+        « مستودع روائع الفكر البشري، ونفائس المخطوطات والآلات الفلكية والميكانيكية التي صاغتها يد الحضارة الإنسانية الكلاسيكية من باريس ولندن إلى قرطبة والإسكندرية. »
+      </p>
+    </header>
+
+    <!-- 2. Imperial Controls Bar -->
+    <div class="imperial-controls">
+      <div class="hall-indicator">
+        <span>🏛️ القاعة الملكية الكبرى</span>
+        <span>•</span>
+        <span>مجموعات القرن السابع عشر والثامن عشر</span>
+      </div>
+
+      <div class="control-actions">
+        <button class="btn-audio-toggle" id="btn-audio-toggle">🔇 النغمات الكلاسيكية: صامتة</button>
+        <button class="btn-brass" id="btn-lang-toggle">Langue Classique (Français & English)</button>
+      </div>
+    </div>
+
+    <!-- 3. Navigation Salons Tabs -->
+    <nav class="gallery-nav">
+      <button class="gallery-tab active" data-exhibit="exhibit-astrolabe">
+        <span>⚜</span>
+        <span>أسطرلاب الفلك الملكي</span>
+      </button>
+      <button class="gallery-tab" data-exhibit="exhibit-manuscript">
+        <span>📜</span>
+        <span>مخطوطة التنوير والعدسة النحاسية</span>
+      </button>
+      <button class="gallery-tab" data-exhibit="exhibit-cartography">
+        <span>🧭</span>
+        <span>أطلس الملاحة والبحار</span>
+      </button>
+      <button class="gallery-tab" data-exhibit="exhibit-horology">
+        <span>⏳</span>
+        <span>ميزان الساعات الملكية</span>
+      </button>
+      <button class="gallery-tab" data-exhibit="exhibit-quill">
+        <span>🖋️</span>
+        <span>ديوان الحكمة والشهادة المذهبة</span>
+      </button>
+    </nav>
+
+    <!-- 4. Master Parchment Showcase Area -->
+    <main class="parchment-case">
+
+      <!-- ==========================================
+           EXHIBIT I: ASTROLABE
+           ========================================== -->
+      <section class="exhibit-view active" id="exhibit-astrolabe">
+        <div class="exhibit-header">
+          <div>
+            <div class="exhibit-badge">Instrumentum Astronomicum • قاعة الرصد الملكي</div>
+            <h2 class="exhibit-title">الأسطرلاب الفلكي الأندلسي الملكي (L'Astrolabe Céleste)</h2>
+            <div class="exhibit-origin">صناعة نحاسية دقيقة مستوحاة من مرصد إشبيلية وباريس — أواخر القرن السادس عشر</div>
+          </div>
+
+          <div class="wax-seal" title="خاتم المرصد الملكي">
+            <div class="wax-seal-inner">⚜</div>
+          </div>
+        </div>
+
+        <div class="astrolabe-grid">
+          <div class="astrolabe-canvas-wrapper">
+            <canvas id="astrolabe-canvas"></canvas>
+          </div>
+
+          <div class="astrolabe-instruments-panel">
+            <div class="panel-section-title">صفيحة العرض الفلكي (Latitude Plate)</div>
+            <select class="astrolabe-plate-select" id="plate-select">
+              <option value="37.88">قرطبة وإشبيلية — عرض 37° شمالاً</option>
+              <option value="48.85">مرصد باريس الملكي — عرض 48° شمالاً</option>
+              <option value="51.50">الجمعية الملكية بلندن — عرض 51° شمالاً</option>
+              <option value="31.20">مكتبة الإسكندرية — عرض 31° شمالاً</option>
+              <option value="21.42">مكة المكرمة — عرض 21° شمالاً</option>
+            </select>
+
+            <div class="panel-section-title">بيانات القبة السماوية اللحظية</div>
+            <div class="astrolabe-readout-item">
+              <span class="readout-label">موقع الشمس في البروج:</span>
+              <span class="readout-val" id="readout-zodiac">Aries / الحمل</span>
+            </div>
+            <div class="astrolabe-readout-item">
+              <span class="readout-label">ارتفاع الشمس (Solar Altitude):</span>
+              <span class="readout-val" id="readout-solar-alt">42° N</span>
+            </div>
+            <div class="astrolabe-readout-item">
+              <span class="readout-label">الزمن النجمي (Sidereal Time):</span>
+              <span class="readout-val" id="readout-sidereal">03:45 h</span>
+            </div>
+
+            <p style="font-size: 0.9rem; color: var(--ink-faded); margin-top: 16px; border-top: 1px dashed var(--parchment-border); padding-top: 12px;">
+              💡 <em>حرّك القرص النحاسي بالفأرة أو باللمس لتدوير شبكة النجوم والتعرف على حركة الأجرام ومواقع الشعرى اليمانية والنسر الواقع.</em>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           EXHIBIT II: MANUSCRIPT & BRASS LOUPE
+           ========================================== -->
+      <section class="exhibit-view" id="exhibit-manuscript">
+        <div class="exhibit-header">
+          <div>
+            <div class="exhibit-badge">Manuscrit Enluminé • ديوان المخطوطات والوثائق النادرة</div>
+            <h2 class="exhibit-title">مخطوطة التنوير الكبرى والعدسة النحاسية</h2>
+            <div class="exhibit-origin">من نفائس خزانة الجمعية الملكية والأكاديمية الفرنسية للعلوم (1687م)</div>
+          </div>
+
+          <div class="wax-seal" title="الختم البابوي الملكي">
+            <div class="wax-seal-inner">📜</div>
+          </div>
+        </div>
+
+        <div class="manuscript-stage" id="manuscript-stage">
+          <div class="brass-loupe" id="brass-loupe">
+            <div class="brass-loupe-handle"></div>
+          </div>
+
+          <p class="manuscript-text">
+            <span class="drop-cap">إ</span>ن البحث في نواميس الكون وقوانين الضوء والحركة ليس ترفاً ذهنياً، بل هو أعظم ما كرّمه به الخالق عقل الإنسان. وكما بيّن الحسن بن الهيثم في مقالته الخالدة عن المناظر: <em>«الحق مرغوب فيه لذاته، وفي كل ما هو مطلوب لذاته لا يُعنى إلا بوجوده، والوصول إلى الحق صعب، والمسلك إليه وعر.»</em>
+          </p>
+
+          <p class="manuscript-text" style="margin-top: 16px;">
+            وقد تلقفت هذا المشعل العقول الكبرى في باريس وأكسفورد؛ فصاغ السير إسحاق نيوتن أصوله الرياضية في الفلسفة الطبيعية (Principia Mathematica)، معلناً أن الكون محكوم بنظام متناسق تسري عليه قوانين الجاذبية كأعظم سيمفونية إلهية بديعة.
+          </p>
+
+          <div class="manuscript-latin-folio">
+            « Philosophiae Naturalis Principia Mathematica — Auctore Isaaco Newtono, Regalis Societatis Praeside. Imprimatur S. Pepys, Reg. Soc. Praeses. Julii 5. 1686. Londini, Jussu Societatis Regiae ac Typis Josephi Streater. »
+          </div>
+        </div>
+
+        <p style="font-size: 0.95rem; color: var(--ink-faded); margin-top: 16px; text-align: center;">
+          🔍 <em>مرر الفأرة فوق المخطوطة أعلاه لتفعيل عدسة القراءة النحاسية المكبّرة واستكشاف تفاصيل الحبر والخط الكلاسيكي.</em>
+        </p>
+      </section>
+
+      <!-- ==========================================
+           EXHIBIT III: CARTOGRAPHY & MARITIME ATLAS
+           ========================================== -->
+      <section class="exhibit-view" id="exhibit-cartography">
+        <div class="exhibit-header">
+          <div>
+            <div class="exhibit-badge">Atlas Nauticus • خريطة البورتولان والبحار الملكية</div>
+            <h2 class="exhibit-title">أطلس الملاحة والرحلات البحرية الكبرى</h2>
+            <div class="exhibit-origin">مستوحاة من خرائط الأدميرالية البريطانية والمكتبة الوطنية الفرنسية</div>
+          </div>
+
+          <div class="wax-seal" title="ختم الأسطول الملكي">
+            <div class="wax-seal-inner">🧭</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+          <button class="btn-brass btn-voyage-select active" data-voyage="ibn_battuta">رحلة ابن بطوطة (1325م)</button>
+          <button class="btn-brass btn-voyage-select" data-voyage="cook">رحلة كوك - سفينة إنديفور (1768م)</button>
+          <button class="btn-brass btn-voyage-select" data-voyage="laperouse">بعثة لا بيروز الفرنسية (1785م)</button>
+        </div>
+
+        <div class="cartography-stage">
+          <canvas id="sea-chart-canvas"></canvas>
+
+          <div class="voyage-info-card">
+            <div class="voyage-title" id="voyage-card-title">رحلة شمس الدين ابن بطوطة (1325 - 1354م)</div>
+            <div style="font-size: 0.85rem; color: var(--ink-faded); margin-bottom: 8px;" id="voyage-card-subtitle">The Great Journey across North Africa, Arabia, India & Cathay</div>
+            <div id="voyage-card-log">« خرجتُ من طنجة مسقط رأسي معتمداً على الله... قطعتُ أزيد من 117 ألف كيلومتر في ثلاثين عاماً لم يسبقني إليها رحالة في تاريخ البشرية. »</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           EXHIBIT IV: HOROLOGY & ESCAPEMENT
+           ========================================== -->
+      <section class="exhibit-view" id="exhibit-horology">
+        <div class="exhibit-header">
+          <div>
+            <div class="exhibit-badge">Horlogerie de Précision • ميكانيكا الساعات الملكية</div>
+            <h2 class="exhibit-title">ميزان الساعات الفلكية وتروس بريغيه</h2>
+            <div class="exhibit-origin">ابتكار جورج غراهام ولويس بريغيه في لندن وباريس — ضبط الزمن الكوني</div>
+          </div>
+
+          <div class="wax-seal" title="ختم نقابة الساعاتيين">
+            <div class="wax-seal-inner">⏳</div>
+          </div>
+        </div>
+
+        <div class="horology-grid">
+          <div class="escapement-canvas-box">
+            <canvas id="escapement-canvas"></canvas>
+          </div>
+
+          <div class="astrolabe-instruments-panel">
+            <div class="panel-section-title">فلسفة قياس الزمن البشري</div>
+            <p style="font-size: 0.95rem; line-height: 1.8; color: var(--ink-primary); margin-bottom: 16px;">
+              يمثل <strong>ميزان السقاطة (Deadbeat Anchor Escapement)</strong> قمة الهندسة الميكانيكية في القرن الثامن عشر؛ حيث يحول الطاقة الكامنة للأثقال المتدلية إلى نبضات متساوية بدقة أجزاء الثانية، مما مكّن البحارة من تحديد خطوط الطول الجغرافية وحفظ أرواح آلاف المستكشفين في عرض المحيطات.
+            </p>
+
+            <div class="astrolabe-readout-item">
+              <span class="readout-label">تردد التذبذب (Frequency):</span>
+              <span class="readout-val">1.000 هرتز (دقيق)</span>
+            </div>
+            <div class="astrolabe-readout-item">
+              <span class="readout-label">مادة التروس:</span>
+              <span class="readout-val">نحاس مصقول وفولاذ أزرق</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           EXHIBIT V: THE ENLIGHTENMENT FOLIO
+           ========================================== -->
+      <section class="exhibit-view" id="exhibit-quill">
+        <div class="exhibit-header">
+          <div>
+            <div class="exhibit-badge">Scriptorium Regium • صالون الحكمة والشهادة التاريخية</div>
+            <h2 class="exhibit-title">ديوان الحكمة وصانع الوثائق الملكية</h2>
+            <div class="exhibit-origin">اكتب حكمتك أو رسالتك لتحصل على شهادة أرشيفية مذهبة ومختومة بالشمع الأحمر</div>
+          </div>
+
+          <div class="wax-seal" title="ختم الحفظ والأصالة">
+            <div class="wax-seal-inner">🖋️</div>
+          </div>
+        </div>
+
+        <div class="quill-studio-grid">
+          <!-- Input Form -->
+          <div class="astrolabe-instruments-panel">
+            <div class="panel-section-title">بيانات الباحث والأديب</div>
+            <div class="quill-form-group">
+              <label class="quill-label">الاسم الكريم واللقب:</label>
+              <input type="text" class="quill-input" id="cert-input-name" value="العالِم الأديب / أ. طارق ابوعشي">
+            </div>
+
+            <div class="quill-form-group">
+              <label class="quill-label">الصفة أو الرتبة العلمية:</label>
+              <input type="text" class="quill-input" id="cert-input-title" value="خبير التعليم الرقمي والتراث الإنساني الخالد">
+            </div>
+
+            <div class="quill-form-group">
+              <label class="quill-label">الحكمة أو القول المأثور الخالد:</label>
+              <textarea class="quill-textarea" id="cert-input-motto">« البساطة والعراقة هما منتهى الرقي الإنساني؛ فما صُنع بعناية وروح يبقى أثره خالداً في ذاكرة الأيام. »</textarea>
+            </div>
+
+            <button class="btn-brass" id="btn-print-certificate" style="width: 100%; justify-content: center; padding: 12px;">
+              🖨️ طباعة وحفظ الوثيقة الأرشيفية المذهبة
+            </button>
+          </div>
+
+          <!-- Live Illuminated Certificate Preview -->
+          <div class="illuminated-certificate">
+            <div class="fleur-de-lis-crest" style="margin-bottom: 4px;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C11.5 4 10 7 7 8C7 10 8 12 10 12.5C9.5 13.5 9 14.5 9 16C9 17.5 10 18.5 11 19C10.5 19.5 10 20.5 10 21.5H14C14 20.5 13.5 19.5 13 19C14 18.5 15 17.5 15 16C15 14.5 14.5 13.5 14 12.5C16 12 17 10 17 8C14 7 12.5 4 12 2Z"/>
+              </svg>
+            </div>
+            <div class="cert-header">شهادة تقدير وأصالة من قصر التراث الإنساني</div>
+            
+            <div class="cert-name" id="cert-display-name">العالِم الأديب / أ. طارق ابوعشي</div>
+            <div style="font-family: var(--font-royal); font-size: 0.9rem; color: var(--gold-shadow); margin-bottom: 12px;" id="cert-display-title">
+              خبير التعليم الرقمي والتراث الإنساني الخالد
+            </div>
+
+            <div class="cert-body" id="cert-display-body">
+              « البساطة والعراقة هما منتهى الرقي الإنساني؛ فما صُنع بعناية وروح يبقى أثره خالداً في ذاكرة الأيام. »
+            </div>
+
+            <div class="cert-footer">
+              <div class="wax-seal" style="width: 58px; height: 58px;">
+                <div class="wax-seal-inner" style="width: 44px; height: 44px; font-size: 1.1rem;">⚜</div>
+              </div>
+
+              <div style="text-align: right;">
+                <div class="cert-signature">Tareq Abuashi</div>
+                <div style="font-size: 0.8rem; color: var(--ink-faded);" id="cert-display-date">صدر في قصر الأرشيف الملكي</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 5. Imperial Palace Footer -->
+    <footer class="palace-footer">
+      <div class="palace-footer-signature">Le Grand Cabinet des Curiosités & des Sciences</div>
+      <div style="font-size: 0.95rem; margin-bottom: 8px;">
+        صُمم ونُسج بعناية فائقة استلهاماً من أروقة قصر فرساي والمكتبة البريطانية ونفائس الحضارة الإنسانية
+      </div>
+      <div style="font-family: var(--font-calligraphy); font-size: 1.1rem; color: var(--gold-antique);">
+        بإشراف وتطوير: أ. طارق ابوعشي — Tareq Abuashi
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/audio-ambience.js"></script>
+  <script src="js/astrolabe.js"></script>
+  <script src="js/magnifying-loupe.js"></script>
+  <script src="js/cartography.js"></script>
+  <script src="js/horology.js"></script>
+  <script src="js/quill-folio.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

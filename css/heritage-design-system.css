@@ -1,0 +1,733 @@
+/* ==========================================================================
+   LE GRAND CABINET DES CURIOSITÉS & DES SCIENCES
+   Classical British, French & Human Heritage Aesthetic System
+   Curated by: Tareq Abuashi (أ. طارق ابوعشي)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* Heritage Palette */
+  --parchment-light: #fbf7ee;
+  --parchment-base: #f4ecdc;
+  --parchment-shadow: #e5d8be;
+  --parchment-border: #d8c4a0;
+  
+  --ink-primary: #1c150e;
+  --ink-secondary: #4a3b2c;
+  --ink-faded: #786650;
+  
+  --gold-highlight: #fae19c;
+  --gold-primary: #c99a3e;
+  --gold-antique: #9e7225;
+  --gold-shadow: #593e11;
+  
+  --wax-red-base: #861819;
+  --wax-red-dark: #580c0d;
+  --wax-red-highlight: #b92b2c;
+  
+  --british-racing-green: #0d281e;
+  --royal-bordeaux: #3d0c14;
+  --oxford-blue: #0b1a30;
+  
+  /* Radii & Shadows */
+  --shadow-parchment: 0 12px 36px rgba(28, 21, 14, 0.12), 0 2px 6px rgba(28, 21, 14, 0.08);
+  --shadow-emboss: inset 0 2px 3px rgba(255, 255, 255, 0.6), inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-wax: 0 6px 16px rgba(88, 12, 13, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  
+  /* Fonts */
+  --font-royal: 'Cinzel Decorative', 'Amiri', serif;
+  --font-serif: 'Cormorant Garamond', 'Amiri', serif;
+  --font-editorial: 'Playfair Display', 'Amiri', serif;
+  --font-calligraphy: 'Aref Ruqaa', 'Cormorant Garamond', cursive;
+}
+
+/* Base Reset & Atmospheric Background */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #1a140f;
+  background-image: 
+    radial-gradient(ellipse at 50% 20%, rgba(201, 154, 62, 0.06) 0%, transparent 70%),
+    radial-gradient(circle at 10% 90%, rgba(13, 40, 30, 0.4) 0%, transparent 60%),
+    radial-gradient(circle at 90% 10%, rgba(61, 12, 20, 0.4) 0%, transparent 60%),
+    linear-gradient(180deg, #18120e 0%, #110d0a 100%);
+  color: var(--ink-primary);
+  font-family: var(--font-serif);
+  font-size: 19px;
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+  direction: rtl; /* Classical Arabic as primary majestic register */
+}
+
+/* Master Hall Container */
+.grand-palace-layout {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  position: relative;
+}
+
+/* Top Imperial Header */
+.imperial-header {
+  text-align: center;
+  padding: 40px 20px 50px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.fleur-de-lis-crest {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--gold-primary);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.imperial-subtitle {
+  font-family: var(--font-calligraphy);
+  font-size: 1.35rem;
+  color: var(--gold-primary);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.imperial-title {
+  font-family: var(--font-royal);
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fbf5e6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 0 24px rgba(201, 154, 62, 0.35);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.imperial-motto {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #c4b59f;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.filigree-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 24px auto;
+  max-width: 600px;
+  color: var(--gold-primary);
+}
+
+.filigree-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-antique), transparent);
+}
+
+.filigree-ornament {
+  font-size: 1.2rem;
+}
+
+/* Controls Bar (Language & Classical Acoustic Ambience) */
+.imperial-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(35, 27, 20, 0.9) 0%, rgba(22, 17, 12, 0.9) 100%);
+  border: 1px solid var(--gold-shadow);
+  border-radius: 4px;
+  padding: 12px 24px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.hall-indicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #dfd3c0;
+  font-family: var(--font-calligraphy);
+  font-size: 1.1rem;
+}
+
+.control-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-brass {
+  background: linear-gradient(180deg, var(--gold-highlight) 0%, var(--gold-primary) 50%, var(--gold-antique) 100%);
+  color: #1a1208;
+  border: 1px solid var(--gold-shadow);
+  padding: 8px 18px;
+  font-family: var(--font-royal);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-brass:hover {
+  background: linear-gradient(180deg, #fff0c2 0%, var(--gold-highlight) 50%, var(--gold-primary) 100%);
+  box-shadow: 0 6px 16px rgba(201, 154, 62, 0.3), inset 0 1px 2px #fff;
+  transform: translateY(-1px);
+}
+
+.btn-brass:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.btn-audio-toggle {
+  background: transparent;
+  border: 1px solid var(--gold-antique);
+  color: #d9cca8;
+  padding: 8px 16px;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.btn-audio-toggle:hover {
+  background: rgba(201, 154, 62, 0.1);
+  color: #fff;
+}
+
+/* Master Gallery Tabs (Salons) */
+.gallery-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.gallery-tab {
+  background: rgba(30, 23, 17, 0.85);
+  border: 1px solid var(--gold-shadow);
+  color: #c7baa7;
+  padding: 12px 24px;
+  font-family: var(--font-royal);
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-tab::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-tab:hover {
+  color: #fff;
+  background: rgba(45, 34, 25, 0.9);
+  border-color: var(--gold-antique);
+}
+
+.gallery-tab.active {
+  background: linear-gradient(180deg, rgba(55, 41, 28, 0.95) 0%, rgba(32, 24, 16, 0.95) 100%);
+  color: var(--gold-highlight);
+  border-color: var(--gold-primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(201, 154, 62, 0.2);
+}
+
+.gallery-tab.active::before {
+  opacity: 1;
+}
+
+/* Parchment Exhibition Case (The Master Canvas) */
+.parchment-case {
+  background-color: var(--parchment-base);
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 80%),
+    linear-gradient(180deg, var(--parchment-light) 0%, var(--parchment-base) 60%, var(--parchment-shadow) 100%);
+  border: 12px solid #241a12;
+  outline: 2px solid var(--gold-antique);
+  border-radius: 4px;
+  padding: 48px;
+  box-shadow: 
+    0 24px 70px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 0 60px rgba(120, 102, 80, 0.2);
+  position: relative;
+  margin-bottom: 50px;
+}
+
+/* Ornate Victorian Filigree Corners */
+.parchment-case::before,
+.parchment-case::after {
+  content: '❦';
+  position: absolute;
+  font-size: 1.8rem;
+  color: var(--gold-antique);
+  opacity: 0.85;
+}
+
+.parchment-case::before {
+  top: 16px;
+  right: 20px;
+}
+
+.parchment-case::after {
+  bottom: 16px;
+  left: 20px;
+}
+
+/* Exhibit Container */
+.exhibit-view {
+  display: none;
+  animation: fadeInParchment 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.exhibit-view.active {
+  display: block;
+}
+
+@keyframes fadeInParchment {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classical Header for each Exhibit */
+.exhibit-header {
+  border-bottom: 1px double var(--parchment-border);
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.exhibit-badge {
+  font-family: var(--font-royal);
+  font-size: 0.8rem;
+  color: var(--wax-red-base);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.exhibit-title {
+  font-family: var(--font-editorial);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1.3;
+}
+
+.exhibit-origin {
+  font-family: var(--font-calligraphy);
+  font-size: 1.15rem;
+  color: var(--ink-faded);
+}
+
+/* Authentic Wax Seal Emblem */
+.wax-seal {
+  width: 72px;
+  height: 72px;
+  background: radial-gradient(circle at 35% 35%, var(--wax-red-highlight) 0%, var(--wax-red-base) 65%, var(--wax-red-dark) 100%);
+  border-radius: 50%;
+  box-shadow: var(--shadow-wax);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.wax-seal:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.wax-seal-inner {
+  width: 54px;
+  height: 54px;
+  border: 1.5px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.4rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   EXHIBIT I: L'ASTROLABE CÉLESTE ROYAL (الأسطرلاب الفلكي)
+   ========================================================================== */
+.astrolabe-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 36px;
+  align-items: center;
+}
+
+.astrolabe-canvas-wrapper {
+  background: radial-gradient(circle at 50% 50%, #201912 0%, #110c08 100%);
+  border: 6px solid #36291a;
+  outline: 2px solid var(--gold-antique);
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  max-width: 580px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(0, 0, 0, 0.8);
+  cursor: grab;
+}
+
+.astrolabe-canvas-wrapper:active {
+  cursor: grabbing;
+}
+
+#astrolabe-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.astrolabe-instruments-panel {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--parchment-border);
+  padding: 24px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 20px rgba(216, 196, 160, 0.3);
+}
+
+.panel-section-title {
+  font-family: var(--font-royal);
+  font-size: 1.05rem;
+  color: var(--royal-bordeaux);
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--parchment-border);
+  padding-bottom: 6px;
+}
+
+.astrolabe-readout-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.readout-label {
+  color: var(--ink-secondary);
+}
+
+.readout-val {
+  font-family: var(--font-royal);
+  font-weight: 700;
+  color: var(--gold-shadow);
+}
+
+.astrolabe-plate-select {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--parchment-light);
+  border: 1px solid var(--parchment-border);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--ink-primary);
+  border-radius: 3px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   EXHIBIT II: LA LOUPE DU BIBLIOPHILE (مخطوطة التنوير والعدسة النحاسية)
+   ========================================================================== */
+.manuscript-stage {
+  position: relative;
+  background: #fbf7ec;
+  border: 1px solid var(--parchment-border);
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  cursor: none; /* Custom brass loupe acts as cursor */
+}
+
+.drop-cap {
+  float: right;
+  font-family: var(--font-royal);
+  font-size: 4.5rem;
+  line-height: 0.8;
+  padding-left: 16px;
+  padding-top: 6px;
+  color: var(--gold-antique);
+  text-shadow: 1px 1px 0 var(--gold-highlight), -1px -1px 0 var(--gold-shadow);
+}
+
+.manuscript-text {
+  font-size: 1.15rem;
+  line-height: 2;
+  color: var(--ink-primary);
+  text-align: justify;
+}
+
+.manuscript-latin-folio {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--parchment-border);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-secondary);
+  direction: ltr;
+  text-align: left;
+}
+
+/* Brass Loupe Cursor */
+.brass-loupe {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border: 6px solid #aa802c;
+  outline: 2px solid #5a420e;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 
+    0 12px 28px rgba(0, 0, 0, 0.4),
+    inset 0 0 20px rgba(255, 255, 255, 0.4),
+    inset 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 250, 235, 0.95);
+  background-repeat: no-repeat;
+  display: none;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+}
+
+.brass-loupe-handle {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 12px;
+  height: 60px;
+  background: linear-gradient(90deg, #aa802c, #d4af37, #5a420e);
+  transform: rotate(45deg);
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+/* ==========================================================================
+   EXHIBIT III: CARTOGRAPHIA ANTIQUA (خرائط الملاحة البحرية الكبرى)
+   ========================================================================== */
+.cartography-stage {
+  position: relative;
+  background: #f1e6ce;
+  border: 2px solid #b8a27d;
+  border-radius: 4px;
+  height: 520px;
+  overflow: hidden;
+  box-shadow: inset 0 0 50px rgba(138, 115, 80, 0.3);
+}
+
+#sea-chart-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.voyage-info-card {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  max-width: 380px;
+  background: rgba(251, 245, 232, 0.94);
+  border: 2px solid var(--gold-antique);
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.voyage-title {
+  font-family: var(--font-editorial);
+  font-size: 1.25rem;
+  color: var(--royal-bordeaux);
+  margin-bottom: 4px;
+}
+
+/* ==========================================================================
+   EXHIBIT IV: L'ÉCHAPPEMENT HORLOGER (ميكانيكا الساعات الملكية)
+   ========================================================================== */
+.horology-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 36px;
+  align-items: center;
+}
+
+.escapement-canvas-box {
+  background: #1c150e;
+  border: 8px solid #3d2f21;
+  outline: 2px solid var(--gold-primary);
+  border-radius: 8px;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+#escapement-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   EXHIBIT V: LE SALON DES PENSÉES & LE SCEAU ROYAL (الصالون الأدبي والوثيقة)
+   ========================================================================== */
+.quill-studio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+
+.quill-form-group {
+  margin-bottom: 20px;
+}
+
+.quill-label {
+  display: block;
+  font-family: var(--font-royal);
+  font-size: 0.9rem;
+  color: var(--ink-secondary);
+  margin-bottom: 6px;
+}
+
+.quill-input,
+.quill-textarea {
+  width: 100%;
+  background: var(--parchment-light);
+  border: 1px solid var(--parchment-border);
+  padding: 12px;
+  font-family: var(--font-calligraphy);
+  font-size: 1.2rem;
+  color: var(--ink-primary);
+  border-radius: 3px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.quill-textarea {
+  height: 130px;
+  resize: none;
+}
+
+/* Certificate Preview Box */
+.illuminated-certificate {
+  background: #fbf7ee;
+  border: 10px double #aa802c;
+  padding: 32px;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  position: relative;
+  text-align: center;
+}
+
+.cert-header {
+  font-family: var(--font-royal);
+  font-size: 1.4rem;
+  color: var(--gold-antique);
+  margin-bottom: 8px;
+}
+
+.cert-name {
+  font-family: var(--font-calligraphy);
+  font-size: 2.2rem;
+  color: var(--royal-bordeaux);
+  margin: 12px 0;
+}
+
+.cert-body {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink-primary);
+  margin-bottom: 24px;
+}
+
+.cert-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid var(--parchment-border);
+  padding-top: 16px;
+}
+
+.cert-signature {
+  font-family: var(--font-calligraphy);
+  font-size: 1.3rem;
+  color: var(--ink-secondary);
+}
+
+/* Imperial Palace Footer */
+.palace-footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(201, 154, 62, 0.2);
+  margin-top: 60px;
+  color: #a4947c;
+  font-family: var(--font-serif);
+}
+
+.palace-footer-signature {
+  font-family: var(--font-royal);
+  color: var(--gold-highlight);
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .astrolabe-grid,
+  .horology-grid,
+  .quill-studio-grid {
+    grid-template-columns: 1fr;
+  }
+  .imperial-title {
+    font-size: 2.2rem;
+  }
+  .parchment-case {
+    padding: 24px;
+  }
+}
